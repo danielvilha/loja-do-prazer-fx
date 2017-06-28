@@ -5,21 +5,47 @@
  */
 package lojadoprazerfx.entity;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import lojadoprazerfx.enums.ProductType;
 
 /**
  *
  * @author danielvilha
  */
+@XStreamAlias("productItem")
 public class ProductItem {
     
+    @XStreamAlias("id")
+    @XStreamAsAttribute
     private int id;
+    
+    @XStreamAlias("sku")
+    @XStreamAsAttribute
     private int sku;
+    
+    @XStreamAlias("amount")
+    @XStreamAsAttribute
     private int amount;
+    
+    @XStreamAlias("type")
+    @XStreamAsAttribute
     private ProductType type;
+    
+    @XStreamAlias("value")
+    @XStreamAsAttribute
     private double value;
+    
+    @XStreamAlias("itemName")
+    @XStreamAsAttribute
     private String itemName;
+    
+    @XStreamAlias("itemDescription")
+    @XStreamAsAttribute
     private String itemDescription;
+
+    public ProductItem() {
+    }
 
     public int getId() {
         return id;
@@ -45,12 +71,12 @@ public class ProductItem {
         this.amount = amount;
     }
 
-    public ProductType getType() {
+    public ProductType getProductType() {
         return type;
     }
 
-    public void setType(ProductType type) {
-        this.type = type;
+    public void setProductType(ProductType productType) {
+        this.type = productType;
     }
 
     public double getValue() {
@@ -76,6 +102,4 @@ public class ProductItem {
     public void setItemDescription(String itemDescription) {
         this.itemDescription = itemDescription;
     }
-    
-    
 }

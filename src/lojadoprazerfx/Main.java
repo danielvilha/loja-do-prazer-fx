@@ -7,9 +7,7 @@ package lojadoprazerfx;
 
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -71,33 +69,36 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeEmployee.fxml"));
             BorderPane page = (BorderPane) loader.load();
-            
-            Stage stage = new Stage();
-            stage.initModality(Modality.NONE);
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.setTitle("Empregado");
-            stage.setScene(new Scene(page));  
-            stage.show();
+            rootLayout.setCenter(page);
             
             EmployeeController controller = loader.getController();
             controller.setMain(this);
-            controller.setStage(stage);
         } catch (IOException e) {
             
         }
     }
     
-    public void showSalaryEmployee() {
+    public void showHomeCompany() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/DialogSalaryEmployee.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeEmployee.fxml"));
+            BorderPane page = (BorderPane) loader.load();
+            rootLayout.setCenter(page);
             
-            Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage .initOwner(primaryStage);
-            stage.setTitle("Salário");
-            stage.setScene(new Scene(page));  
-            stage.show();
+            EmployeeController controller = loader.getController();
+            controller.setMain(this);
+        } catch (IOException e) {
+            
+        }
+    }
+    
+    public void showHomeClient() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeEmployee.fxml"));
+            BorderPane page = (BorderPane) loader.load();
+            rootLayout.setCenter(page);
+            
+            EmployeeController controller = loader.getController();
+            controller.setMain(this);
         } catch (IOException e) {
             
         }

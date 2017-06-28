@@ -1,0 +1,62 @@
+<purchases>
+  <lojadoprazer.dto.Purchase>
+    <id>1</id>
+    <value>12.0</value>
+    <clientId>2</clientId>
+    <purchaseDate>10/04/2017</purchaseDate>
+    <employeeId>1</employeeId>
+    <purchaseType>venda</purchaseType>
+    <productList>1</productList>
+  </lojadoprazer.dto.Purchase>
+  <lojadoprazer.dto.Purchase>
+    <id>2</id>
+    <value>12.0</value>
+    <clientId>2</clientId>
+    <purchaseDate>10/04/2017</purchaseDate>
+    <employeeId>1</employeeId>
+    <purchaseType>venda</purchaseType>
+    <productList>1</productList>
+  </lojadoprazer.dto.Purchase>
+  <lojadoprazer.dto.Purchase>
+    <id>3</id>
+    <value>12.0</value>
+    <clientId>2</clientId>
+    <purchaseDate>10/04/2017</purchaseDate>
+    <employeeId>1</employeeId>
+    <purchaseType>venda</purchaseType>
+    <productList>1</productList>
+  </lojadoprazer.dto.Purchase>
+  <lojadoprazer.dto.Purchase>
+    <id>2</id>
+    <value>12.0</value>
+    <clientId>0</clientId>
+    <purchaseDate>26/04/2017 14:06:39</purchaseDate>
+    <employeeId>0</employeeId>
+    <purchaseType>venda</purchaseType>
+    <productList>1</productList>
+    <client>
+      <id>2</id>
+      <type>2</type>
+      <cpf>34081105146</cpf>
+      <login>heitor</login>
+      <password>123456</password>
+      <userName>Heitor Carlos Eduardo Alexandre Rocha</userName>
+      <typeName>client</typeName>
+    </client>
+    <employee>
+      <id>1</id>
+      <user>
+        <id>1</id>
+        <type>1</type>
+        <cpf>17606868409</cpf>
+        <login>luiz</login>
+        <password>123456</password>
+        <userName>Luiz Ryan Pereira</userName>
+        <typeName>employee</typeName>
+      </user>
+      <matricula>100001</matricula>
+      <salario>3000.0</salario>
+      <employeeType>funcionario</employeeType>
+    </employee>
+  </lojadoprazer.dto.Purchase>
+</purchases>

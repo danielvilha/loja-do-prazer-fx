@@ -1,0 +1,20 @@
+<employees>
+  <employee>
+    <id>1</id>
+    <matricula>100001</matricula>
+    <salario>3000.0</salario>
+    <employeeType>funcionario</employeeType>
+  </employee>
+  <employee>
+    <id>3</id>
+    <matricula>100002</matricula>
+    <salario>5000.0</salario>
+    <employeeType>diretor</employeeType>
+  </employee>
+  <employee>
+    <id>4</id>
+    <matricula>100003</matricula>
+    <salario>4000.0</salario>
+    <employeeType>diretor</employeeType>
+  </employee>
+</employees>

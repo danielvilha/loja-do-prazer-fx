@@ -5,19 +5,48 @@
  */
 package lojadoprazerfx.entity;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import lojadoprazerfx.enums.TypeName;
+
 /**
  *
  * @author danielvilha
  */
+@XStreamAlias("user")
 public class User {
     
+    @XStreamAlias("id")
+    @XStreamAsAttribute
     private int id;
+    
+    @XStreamAlias("type")
+    @XStreamAsAttribute
     private int type;
+    
+    @XStreamAlias("cpf")
+    @XStreamAsAttribute
     private String cpf;
+    
+    @XStreamAlias("login")
+    @XStreamAsAttribute
     private String login;
+    
+    @XStreamAlias("password")
+    @XStreamAsAttribute
     private String password;
+    
+    @XStreamAlias("userName")
+    @XStreamAsAttribute
     private String userName;
+    
+    @XStreamAlias("typeName")
+    @XStreamAsAttribute
+    private TypeName typeName;
 
+    public User() {
+    }
+    
     public int getId() {
         return id;
     }
@@ -65,6 +94,12 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    
-    
+
+    public TypeName getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(TypeName typeName) {
+        this.typeName = typeName;
+    }
 }

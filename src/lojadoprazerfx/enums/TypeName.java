@@ -9,10 +9,9 @@ package lojadoprazerfx.enums;
  *
  * @author danielvilha
  */
-public enum ProductType {
-    acessorio,
-    cosmetico,
-    lingerie,
-    masturbador,
-    vibrador
+public enum TypeName {
+    client,
+    employee,
+    gerente,
+    diretor
 }

@@ -5,18 +5,39 @@
  */
 package lojadoprazerfx.entity;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import lojadoprazerfx.enums.EmployeeType;
+
 /**
  *
  * @author danielvilha
  */
+@XStreamAlias("employee")
 public class Employee {
     
+    @XStreamAlias("id")
     private int id;
+    
+    @XStreamOmitField
     private User user;
+    
+    @XStreamAlias("matricula")
+    @XStreamAsAttribute
     private int matricula;
+    
+    @XStreamAlias("salario")
+    @XStreamAsAttribute
     private double salario;
-    private int employeeType;
+    
+    @XStreamAlias("employeeType")
+    @XStreamAsAttribute
+    private EmployeeType employeeType;
 
+    public Employee() {
+    }
+    
     public int getId() {
         return id;
     }
@@ -24,7 +45,7 @@ public class Employee {
     public void setId(int id) {
         this.id = id;
     }
-
+    
     public User getUser() {
         return user;
     }
@@ -49,11 +70,11 @@ public class Employee {
         this.salario = salario;
     }
 
-    public int getEmployeeType() {
+    public EmployeeType getEmployeeType() {
         return employeeType;
     }
 
-    public void setEmployeeType(int employeeType) {
+    public void setEmployeeType(EmployeeType employeeType) {
         this.employeeType = employeeType;
     }
 }

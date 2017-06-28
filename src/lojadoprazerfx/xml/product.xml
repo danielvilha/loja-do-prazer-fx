@@ -1,0 +1,11 @@
+<productsItens>
+  <lojadoprazer.dto.ProductItem>
+    <id>1</id>
+    <sku>10000001</sku>
+    <amount>19</amount>
+    <type>acessorio</type>
+    <value>12.0</value>
+    <itemName>Anel Peniano</itemName>
+    <itemDescription>Anel Peniano sem Vibrador</itemDescription>
+  </lojadoprazer.dto.ProductItem>
+</productsItens>

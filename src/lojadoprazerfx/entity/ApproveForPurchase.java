@@ -5,30 +5,32 @@
  */
 package lojadoprazerfx.entity;
 
-import java.util.List;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 /**
  *
  * @author danielvilha
  */
+@XStreamAlias("approveForPurchase")
 public class ApproveForPurchase {
     
+    @XStreamAlias("id")
+    @XStreamAsAttribute
     private int id;
-    private List<ProductItem> productItemList;
 
+    public ApproveForPurchase() {
+    }
+
+    public ApproveForPurchase(int id) {
+        this.id = id;
+    }
+    
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public List<ProductItem> getProductItemList() {
-        return productItemList;
-    }
-
-    public void setProductItemList(List<ProductItem> productItemList) {
-        this.productItemList = productItemList;
     }
 }

@@ -13,9 +13,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import lojadoprazerfx.controller.ClientController;
+import lojadoprazerfx.controller.CompanyController;
 import lojadoprazerfx.controller.EmployeeController;
 import lojadoprazerfx.controller.LoginController;
+import lojadoprazerfx.controller.ModelCreateClientController;
+import lojadoprazerfx.controller.ModelCreateFuncController;
+import lojadoprazerfx.entity.Employee;
 
 /**
  *
@@ -58,6 +62,7 @@ public class Main extends Application {
             AnchorPane loginView = (AnchorPane) loader.load();
             rootLayout.setCenter(loginView);
             
+            this.primaryStage.setTitle("Loja do Prazer");
             LoginController controller = loader.getController();
             controller.setMain(this);
         } catch (IOException e) {
@@ -71,6 +76,7 @@ public class Main extends Application {
             BorderPane page = (BorderPane) loader.load();
             rootLayout.setCenter(page);
             
+            this.primaryStage.setTitle("Loja do Prazer - Empregado");
             EmployeeController controller = loader.getController();
             controller.setMain(this);
         } catch (IOException e) {
@@ -80,11 +86,12 @@ public class Main extends Application {
     
     public void showHomeCompany() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeEmployee.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeCompany.fxml"));
             BorderPane page = (BorderPane) loader.load();
             rootLayout.setCenter(page);
             
-            EmployeeController controller = loader.getController();
+            this.primaryStage.setTitle("Loja do Prazer - Admin");
+            CompanyController controller = loader.getController();
             controller.setMain(this);
         } catch (IOException e) {
             
@@ -93,14 +100,74 @@ public class Main extends Application {
     
     public void showHomeClient() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeEmployee.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/HomeClient.fxml"));
             BorderPane page = (BorderPane) loader.load();
             rootLayout.setCenter(page);
             
-            EmployeeController controller = loader.getController();
+            this.primaryStage.setTitle("Loja do Prazer - Cliente");
+            ClientController controller = loader.getController();
             controller.setMain(this);
         } catch (IOException e) {
             
+        }
+    }
+    
+    public boolean showEmployeeEditDialog(Employee employee) {
+        try {
+            // Carrega o arquivo fxml e cria um novo stage para a janela popup.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/ModelCreateFunc.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Cria o palco dialogStage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Adicionar Empregado");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Define a pessoa no controller.
+            ModelCreateFuncController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setEmployee(employee);
+
+            // Mostra a janela e espera até o usuário fechar.
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean showUserEditDialog() {
+        try {
+            // Carrega o arquivo fxml e cria um novo stage para a janela popup.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/ModelCreateClient.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Cria o palco dialogStage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Adicionar Cliente");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Define a pessoa no controller.
+            ModelCreateClientController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+
+            // Mostra a janela e espera até o usuário fechar.
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
     }
     

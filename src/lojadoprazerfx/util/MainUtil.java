@@ -6,6 +6,7 @@
 package lojadoprazerfx.util;
 
 import lojadoprazerfx.Main;
+import lojadoprazerfx.entity.User;
 
 /**
  *
@@ -14,6 +15,7 @@ import lojadoprazerfx.Main;
 public class MainUtil {
     
     Main main;
+    User user;
     
     /**
      * Is called by the main application to give a reference back to itself.
@@ -26,5 +28,13 @@ public class MainUtil {
     
     public Main getMain() {
         return this.main;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -11,7 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import lojadoprazerfx.entity.Employee;
 import lojadoprazerfx.entity.Employees;
 import lojadoprazerfx.util.MainUtil;
@@ -25,15 +25,22 @@ import lojadoprazerfx.util.Util;
 public class EmployeeController extends MainUtil {
     
     @FXML
-    private Button buttonVisualizarSalario;
+    private MenuItem menuItem;
     @FXML
-    private Button buttonSolicitarCompras;
+    private MenuItem menuItemViewSalario;
     @FXML
-    private Button buttonCadastrarCliente;
+    private MenuItem menuItemSolCompras;
     @FXML
-    private Button buttonSair;
+    private MenuItem menuItemCadCliente;
+    @FXML
+    private AnchorPane containerEmployee;
+    
     
     private Stage stage;
+    
+    @FXML
+    private void initialize() {
+    }
 
     public Stage getStage() {
         return stage;
@@ -43,13 +50,26 @@ public class EmployeeController extends MainUtil {
         this.stage = stage;
     }
     
+    @FXML
     public void handleSalary() {
-        Employee emp = getEmployeeById(1);
+        Employee emp = getEmployeeById(getUser().getId());
         Util.Alert(Alert.AlertType.INFORMATION, "Informação", "Consulta de salário", "R$ ");
     }
     
+    @FXML
+    public void handleSolCompras() {
+        Employee emp = getEmployeeById(getUser().getId());
+        Util.Alert(Alert.AlertType.INFORMATION, "Informação", "Consulta de salário", "R$ ");
+    }
+    
+    @FXML
+    public void handleCadCliente() {
+        getMain().showUserEditDialog();
+    }
+    
+    @FXML
     public void handleExit() {
-        this.stage.close();
+        getMain().showLoginView();
     }
     
     public Employee getEmployeeById(int id) {

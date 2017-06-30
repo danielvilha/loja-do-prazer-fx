@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lojadoprazerfx.controller.EmployeeController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/bootstrap.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lojadoprazerfx.controller.EmployeeController">
    <center>
       <AnchorPane fx:id="containerEmployee" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
-   <left>
-      <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="buttonVisualizarSalario" mnemonicParsing="false" prefWidth="164.0" text="VISUALIZAR SALARIO" />
-            <Button fx:id="buttonSolicitarCompras" layoutY="27.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="164.0" text="SOLICITAR COMPRAS" />
-            <Button fx:id="buttonCadastrarCliente" layoutY="54.0" mnemonicParsing="false" prefWidth="164.0" text="CADASTRAR CLIENTES" />
-            <Button fx:id="buttonSair" layoutY="81.0" mnemonicParsing="false" prefWidth="164.0" text="SAIR" />
-         </children>
-      </AnchorPane>
-   </left>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuItemViewSalario" mnemonicParsing="false" onAction="#handleSalary" text="Visualizar Salário" />
+                  <MenuItem fx:id="menuItemSolCompras" mnemonicParsing="false" onAction="#handleSolCompras" text="Solicitar Compras" />
+                  <MenuItem fx:id="menuItemCadCliente" mnemonicParsing="false" onAction="#handleCadCliente" text="Cadastrar Clientes" />
+                  <MenuItem fx:id="menuItemSair3" mnemonicParsing="false" onAction="#handleExit" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/bootstrap.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lojadoprazerfx.controller.CompanyController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuItemListProd" mnemonicParsing="false" onAction="#handleListProd" text="Listar Produtos" />
+                  <MenuItem fx:id="menuItemListCli" mnemonicParsing="false" onAction="#handleListCli" text="Listar Clientes" />
+                  <MenuItem fx:id="menuItemListFunc" mnemonicParsing="false" onAction="#handleListFunc" text="Listar Funcionários" />
+                  <MenuItem fx:id="menuItemListVendas" mnemonicParsing="false" onAction="#handleListVendas" text="Listar Vendas" />
+                  <MenuItem fx:id="menuItemAprCompras" mnemonicParsing="false" onAction="#handleAprCompras" text="Aprovar Compras" />
+                  <MenuItem fx:id="menuItemCadFunc" mnemonicParsing="false" onAction="#handleCadFunc" text="Cadastrar Funcionário" />
+                  <MenuItem fx:id="menuItemSair" mnemonicParsing="false" onAction="#handleExit" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
    <center>
-      <AnchorPane BorderPane.alignment="CENTER" />
+      <ListView fx:id="listView" BorderPane.alignment="CENTER" />
    </center>
-   <left>
-      <AnchorPane BorderPane.alignment="CENTER" />
-   </left>
 </BorderPane>

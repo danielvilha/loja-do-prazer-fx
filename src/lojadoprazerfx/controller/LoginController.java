@@ -42,15 +42,18 @@ public class LoginController extends MainUtil {
                 switch(user.getType()) {
                     case 1:
                         // Employee
+                        setUser(user);
                         getMain().showHomeEmployee();
                         break;
                     case 2:
                         // Client
-                        
+                        setUser(user);
+                        getMain().showHomeClient();
                         break;
                     case 3:
                         // Company
-                        
+                        setUser(user);
+                        getMain().showHomeCompany();
                         break;
                 }
             }

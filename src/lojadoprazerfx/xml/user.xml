@@ -44,4 +44,13 @@
     <userName>Filipe André Igor Araújo</userName>
     <typeName>client</typeName>
   </lojadoprazerfx.entity.User>
+  <lojadoprazerfx.entity.User>
+    <id>6</id>
+    <type>1</type>
+    <cpf>11122233344</cpf>
+    <login>amilton</login>
+    <password>123456</password>
+    <userName>Amilton Junior</userName>
+    <typeName>employee</typeName>
+  </lojadoprazerfx.entity.User>
 </users>
